@@ -1,0 +1,8 @@
+T-NSA rattrapage
+----------------
+
+1 - Préparation de l'infrastructure avec Ansible :
+
+- Ajout des rôles nginx et php-fpm
+- Changement des hosts
+- ajout d'un playbook globale pour déployer les services et dépendances nginx et php-fpm
