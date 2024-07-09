@@ -1,0 +1,23 @@
+---
+# tasks file for php-fpm
+
+- name: Install PHP-FPM
+  apt:
+    name: php-fpm={{ php_version }}
+    state: present
+
+- name: Ensure PHP-FPM configuration directories exist
+  file:
+    path: "/etc/php/{{ php_version }}/fpm"
+    state: directory
+
+- name: Copy PHP-FPM configuration file
+  template:
+    src: php_fpm.conf.j2
+    dest: /etc/php/{{ php_version }}/fpm/php-fpm.conf
+ 
+- name: Ensure PHP-FPM service is started and enabled
+  service:
+    name: php7.4-fpm
+    state: started
+    enabled: yes

@@ -1,0 +1,8 @@
+# This is the default ansible 'hosts' file.
+
+[nginx]
+front ansible_host=192.168.213.140
+[php_fpm]
+back ansible_host=192.168.213.147
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
